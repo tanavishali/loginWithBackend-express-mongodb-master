@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-// Database connection for serverless
+// toodoasdjas
 let isConnected = false;
 const initDB = async () => {
   if (!isConnected) {
