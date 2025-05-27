@@ -42,7 +42,7 @@
         const data = await res.json();
         if (res.ok) {
           messageDiv.style.color = 'green';
-          messageDiv.textContent = 'Login successful! Token: ' + data.token;
+          messageDiv.textContent = 'Login successful! Token: ' ;
         } else {
           messageDiv.style.color = 'red';
           messageDiv.textContent = data.msg || 'Login failed';
