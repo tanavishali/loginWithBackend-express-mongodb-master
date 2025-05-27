@@ -8,7 +8,6 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -16,16 +15,34 @@ app.use(express.json());
 // Serve static files from the frontend folder
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Default route: serve login.html
+// API routes
+app.use('/api/auth', require('./routes/auth'));
+
+// Handle frontend routes
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/login.html'));
+});
+
+app.get('/signup.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/signup.html'));
+});
+
+app.get('/forgot-password.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/forgot-password.html'));
+});
+
+// Default route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/login.html'));
 });
 
-app.use('/api/auth', require('./routes/auth'));
-
-app.listen(port, () => {
-  console.log(`Server running at http://127.0.0.1:${port}/`);
+// Catch all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/login.html'));
 });
+
 module.exports = app;
+
+
 
 

@@ -1,29 +1,28 @@
 {
-  "name": "loginwithbackend-express-mongodb-master",
+  "name": "node-server-project",
   "version": "1.0.0",
-  "description": "Login system with Express and MongoDB",
-  "main": "src/server.js",
+  "description": "A simple Node.js server project",
+  "main": "api/index.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "build": "echo 'Build complete'",
-    "vercel-build": "echo 'Vercel build complete'"
+    "build": "echo 'Build completed'",
+    "vercel-build": "echo 'Vercel build completed'"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.0.0",
-    "dotenv": "^16.0.3",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.0"
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.1.10"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
-  "keywords": ["express", "mongodb", "login", "authentication"],
-  "author": "Your Name",
-  "license": "MIT"
+  "author": "",
+  "license": "ISC"
 }
